@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <filesystem>  // Certifique-se de que a biblioteca filesystem foi incluÌda corretamente
+#include <filesystem>  // Certifique-se de que a biblioteca filesystem foi inclu√≠da corretamente
 
 // Certifique-se de que estamos usando o namespace std::filesystem
 namespace fs = std::filesystem;
@@ -14,15 +14,15 @@ bool InjectDLL(DWORD processId, const std::wstring& dllPath);
 int main() {
     const std::wstring processName = L"Client-Win64-Shipping.exe";
     const std::vector<std::wstring> dlls = {
-        L"openvr_api.dll",
+        L"openxr_loader.dll",
         L"LuaVR.dll",
         L"UEVRBackend.dll"
     };
 
-    // Verificar se o processo "vrserver.exe" est· em execuÁ„o usando GetProcessIds
+    // Verificar se o processo "vrserver.exe" est√° em execu√ß√£o usando GetProcessIds
     if (GetProcessIds(L"vrserver.exe").empty()) {
         MessageBoxW(nullptr, L"SteamVR is not running. Please launch SteamVR first.", L"Warning", MB_OK | MB_ICONWARNING);
-        return 1; // Finalizar o programa se o VR Server n„o estiver em execuÁ„o
+        return 1; // Finalizar o programa se o VR Server n√£o estiver em execu√ß√£o
     }
 
     std::wcout << L"Start Wuthering Waves now ..." << std::endl;
